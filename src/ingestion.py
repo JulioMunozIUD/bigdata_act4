@@ -22,7 +22,7 @@ url = "https://rickandmortyapi.com/api"
 data = obtener_datos_api(url=url, params=parametros)
 
 def create_database():
-    db_path = "src/static/db/ingestion.db"
+    db_path = "src/db/ingestion.db"
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS characters (
@@ -41,7 +41,7 @@ def create_database():
     conn.close()
 
 def insert_data_into_db(data):
-    db_path = "src/static/db/ingestion.db"
+    db_path = "src/db/ingestion.db"
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     characters = [(char['id'], char['name'], char['status'], char['species'], char['type'], char['gender'],
@@ -52,15 +52,15 @@ def insert_data_into_db(data):
     conn.close()
 
 def generate_sample_file():
-    db_path = "src/static/db/ingestion.db"
-    output_path = "src/static/xlsx/ingestion.xlsx"
+    db_path = "src/db/ingestion.db"
+    output_path = "src/xlsx/ingestion.xlsx"
     conn = sqlite3.connect(db_path)
     df = pd.read_sql_query("SELECT * FROM characters LIMIT 10", conn)
     df.to_excel(output_path, index=False, engine='openpyxl')  # Specify engine
     conn.close()
 
 def generate_audit_file(data):
-    db_path = "src/static/db/ingestion.db"
+    db_path = "src/db/ingestion.db"
     audit_path = "src/static/auditoria/ingestion.txt"
     conn = sqlite3.connect(db_path)
     db_count = pd.read_sql_query("SELECT COUNT(*) AS count FROM characters", conn)['count'][0]
@@ -72,8 +72,8 @@ def generate_audit_file(data):
         file.write(f"Diferencia: {api_count - db_count}\n")
 
 def main():
-    os.makedirs("src/static/db", exist_ok=True)
-    os.makedirs("src/static/xlsx", exist_ok=True)
+    os.makedirs("src/db", exist_ok=True)
+    os.makedirs("src/xlsx", exist_ok=True)
     os.makedirs("src/static/auditoria", exist_ok=True)
 
     parametros = {"characters": "character"}
