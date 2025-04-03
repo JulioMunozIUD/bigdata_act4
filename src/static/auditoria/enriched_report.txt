@@ -1,0 +1,30 @@
+Reporte de Enriquecimiento de Datos
+==================================
+
+Hoja: characters
+  Dataset limpio - Filas: 817, Columnas: 11, Celdas: 8987
+Hoja: locations
+  Dataset limpio - Filas: 120, Columnas: 7, Celdas: 840
+Hoja: episodes
+  Dataset limpio - Filas: 51, Columnas: 7, Celdas: 357
+Registros en dataset de scripts: 51
+
+Hoja: characters
+  Dataset enriquecido - Filas: 817, Columnas: 11, Celdas: 8987
+Hoja: locations
+  Dataset enriquecido - Filas: 120, Columnas: 7, Celdas: 840
+Hoja: episodes
+  Dataset enriquecido - Filas: 51, Columnas: 9, Celdas: 459
+
+Registros coincidentes en 'episodes': 51
+Registros no encontrados en la fuente de scripts: 0
+
+Columnas adicionales agregadas por hoja:
+- characters: No se agregaron columnas
+- locations: No se agregaron columnas
+- episodes: argumento, imdb rating
+
+Resumen General:
+Total de celdas en dataset limpio: 10184
+Total de celdas en dataset enriquecido: 10286
+Diferencia en celdas: 102
