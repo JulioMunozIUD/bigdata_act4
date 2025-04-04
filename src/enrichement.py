@@ -89,7 +89,7 @@ def generate_report(enriched_sheets, cleaned_sheets, scripts_df):
         report.write(f"Total de celdas en dataset limpio: {total_cleaned_cells}\n")
         report.write(f"Total de celdas en dataset enriquecido: {total_enriched_cells}\n")
         report.write(f"Diferencia en celdas: {total_enriched_cells - total_cleaned_cells}\n")
-
+        print(f"[AUDITORÍA] Reporte de enriquecimiento generado en: {REPORT_FILE}")
 if __name__ == "__main__":
     cleaned_sheets = load_cleaned_dataset()
     scripts_df = load_scripts_dataset()

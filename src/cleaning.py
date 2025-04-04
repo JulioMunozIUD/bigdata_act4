@@ -103,14 +103,14 @@ def main():
             full_report.append("Correcciones de tipos de datos:")
             full_report.extend(corrections)
             full_report.append("")
-        
+       
         full_report.append(f"Tipos de datos después de limpieza:\n{df_cleaned.dtypes}")
         full_report.append(f"Total de columnas modificadas en {table}: {len(corrections)}")
         full_report.append(f"Valores vacíos detectados y reemplazados en {table}: {empty_values_count}")
         full_report.append(f"Valores nulos detectados y reemplazados en {table}: {null_values_count}\n")
-    
+        
     generate_cleaning_report("\n".join(full_report), report_path)
-    
+    print(f"[AUDITORÍA] Reporte de limpieza generado en: {report_path}")
     print("Limpieza de datos completada. Archivos generados correctamente.")
 
 if __name__ == "__main__":
