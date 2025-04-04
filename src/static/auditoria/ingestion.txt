@@ -1,3 +1,0 @@
-Registros en la API: 20
-Registros en la BD: 826
-Diferencia: -806
