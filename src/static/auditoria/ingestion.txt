@@ -1,0 +1,15 @@
+Tabla: characters
+Registros en API: 826
+Registros en BD: 826
+Diferencia: 0
+
+Tabla: locations
+Registros en API: 126
+Registros en BD: 126
+Diferencia: 0
+
+Tabla: episodes
+Registros en API: 51
+Registros en BD: 51
+Diferencia: 0
+
