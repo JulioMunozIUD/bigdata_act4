@@ -120,7 +120,9 @@ El proceso del  proyecto integrador de Big Data se ejecuta automáticamente en G
     │   ├── enriched_data.xlsx
     │   ├──cleaned_data.xlsx
     │   └──ingestion.xlsx
-    └── enrichment.py
+    ├── cleaning.py
+    ├── enrichment.py
+    └── ingestion.py
 ```
   
         
